@@ -3,27 +3,40 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
+
 
 using namespace std;
 int main()
 {
-    
    
-    vector<int> v = { 'V', 'F', 'X', 'B', 'L', 'I', 'T', 'Z', 'J', 'R', 'P', 'H', 'D', 'K', 'N', 'O', 'W', 'S', 'G', 'U', 'Y', 'Q', 'M', 'A', 'C', 'E' };
-    cout << "Input Text to Cypher";
-    char ch = 'v';
-    if (ch >= '0' && ch <= '90'){  //is a capital le�er
-        
+    vector<char> cypher = { 'V', 'F', 'X', 'B', 'L', 'I', 'T', 'Z', 'J', 'R', 'P', 'H', 'D', 'K', 'N', 'O', 'W', 'S', 'G', 'U', 'Y', 'Q', 'M', 'A', 'C', 'E' };
+    cout << "Input Text to Cypher" << endl;
+    string text;
+    getline(cin, text);
+    for (char ch : text){
+        if (ch >= '0' && ch <= '90') {  //is a capital le�er
+            
         }
-    else {
+        else if (ch >= '97' && ch <= '122') { // is lower case letter
+            
 
+        }
+        else { // is not letter
+        }
     }
- else {
+    
+  
 
- }
-    cout << text;
 }
-
+//   IF char IS BETWEEN 65 AND 90 //is a capital le�er
+//RETURN THE CHAR AT SLOT char - 65 IN CODE TABLE
+// ELSE IF char IS BETWEEN 97 AND 122 // is lower case le�er
+//SET upperCaseLe�er TO char - 32 // converts the number to upper case number
+//SET upperCaseCode TO CHAR AT SLOT upperCaseLe�er - 65 IN CODE TABLE // get upper case code
+//RETURN upperCaseCode + 32 // convert code back to lower case
+//ELSE // is not le�er
+//RETURN cha
  
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
