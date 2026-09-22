@@ -17,12 +17,12 @@ int main()
     string cyphertext = ""; //creates cyphertext variable
     for (char ch : text){ // checks for each char named "ch" in the text one by one and loops through to change into cypher text
         if (ch >= 65 && ch <= 90) {  //is a capital letter
-            cyphertext += cypher[ch - 65]; // cypher[] to look up letter += allows for a shorthand instead of "cypherText = cyphertext + cypher"
+            cyphertext += cypher[ch - 65]; // cypher[] to look up letter += allows for a shorthand instead of "cypherText = cyphertext + cypher" subtracts 65 to convert into it's cypher letter equivalent
         }
         else if (ch >= 97 && ch <= 122) { // is lower case letter
-            char uppercasenumber = ch - 32; // creates uppercasenumber variable
-            char uppercasecode = cypher[uppercasenumber - 65]; // creates uppercasecode char variable
-            cyphertext += uppercasecode + 32; 
+            char uppercasenumber = ch - 32; // creates uppercasenumber variable subtracts 32 to turn it into it's capital ASCII equivalent
+            char uppercasecode = cypher[uppercasenumber - 65]; // creates uppercasecode char variable does the same as the capital
+            cyphertext += uppercasecode + 32; // adds 32 to convert back to lower case
 
         }
         else { // is not letter
