@@ -10,23 +10,27 @@ using namespace std;
 int main()
 {
    
-    vector<char> cypher = { 'V', 'F', 'X', 'B', 'L', 'I', 'T', 'Z', 'J', 'R', 'P', 'H', 'D', 'K', 'N', 'O', 'W', 'S', 'G', 'U', 'Y', 'Q', 'M', 'A', 'C', 'E' };
-    cout << "Input Text to Cypher" << endl;
-    string text;
-    getline(cin, text);
-    for (char ch : text){
-        if (ch >= '0' && ch <= '90') {  //is a capital le�er
-            
+    vector<char> cypher = { 'V', 'F', 'X', 'B', 'L', 'I', 'T', 'Z', 'J', 'R', 'P', 'H', 'D', 'K', 'N', 'O', 'W', 'S', 'G', 'U', 'Y', 'Q', 'M', 'A', 'C', 'E' }; //creates vector storing the cypher letters
+    cout << "Input Text to Cypher:";
+    string text; // creates a string variable to hold text
+    getline(cin, text); // looks at what the user types and stores it as text
+    string cyphertext = ""; //creates cyphertext variable
+    for (char ch : text){ // checks for each char named "ch" in the text one by one and loops through to change into cypher text
+        if (ch >= 65 && ch <= 90) {  //is a capital letter
+            cyphertext += cypher[ch - 65]; // cypher[] to look up letter += allows for a shorthand instead of "cypherText = cyphertext + cypher"
         }
-        else if (ch >= '97' && ch <= '122') { // is lower case letter
-            
+        else if (ch >= 97 && ch <= 122) { // is lower case letter
+            char uppercasenumber = ch - 32; // creates uppercasenumber variable
+            char uppercasecode = cypher[uppercasenumber - 65]; // creates uppercasecode char variable
+            cyphertext += uppercasecode + 32; 
 
         }
         else { // is not letter
+            cyphertext += ch; // returns char variable
         }
     }
     
-  
+    cout << "Encoded Message: " << cyphertext << endl;
 
 }
 //   IF char IS BETWEEN 65 AND 90 //is a capital le�er
